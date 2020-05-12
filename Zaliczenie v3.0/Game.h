@@ -10,14 +10,31 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
 
+using namespace sf;
+using namespace std;
+
 class Game
 {
 private:
-	void initWindow();
+	
+	//Utworzenie obiektów klasy
+	RenderWindow *window;
+	Event event;
+	Clock timeClock;
+
+	float time;
+	
+	//inicjalizacja okna
+	void initWindow(); 
+
 public:
+	
+	// Konstruktor i destruktor
 	Game();
 	virtual ~Game();
 	
+	//Funkcje
+	void updateTime();
 	void render();
 	void update();
 	void run();
